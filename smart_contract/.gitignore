@@ -1,0 +1,12 @@
+/node_modules
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+
+#Hardhat files
+cache
+artifacts
+
+//Transactions address:  0xC01f86E6B454E146c8e2c1524FAA3E125b24797B
