@@ -9,8 +9,8 @@ const TransactionsCard = ({ addressTo, addressFrom, timestamp, message, keyword,
 
   return (
     <div className="bg-[#181918] m-2 flex flex-4
-      2xl:min-w-[300px]
-      2xl:max-w-[350px]
+      2xl:min-w-[325px]
+      2xl:max-w-[325px]
       sm:min-w-[270px]
       sm:max-w-[300px]
       min-w-full
@@ -35,7 +35,7 @@ const TransactionsCard = ({ addressTo, addressFrom, timestamp, message, keyword,
         <img
           src={gifUrl || url}
           alt="gif"
-          className="w-full h-64 2xl:h-96 rounded-md shadow-lg object-cover"
+          className="w-full h-80 2xl:h-60 rounded-md shadow-lg object-cover"
         />
         <div className="bg-black p-3 px-5 w-max rounded-3xl -mt-5 shadow-2xl">
           <p className="text-[#37c7da] font-bold">{timestamp}</p>
@@ -47,10 +47,10 @@ const TransactionsCard = ({ addressTo, addressFrom, timestamp, message, keyword,
 
 
 const Transactions = () => {
-  const {currentAccount} = useContext(TransactionContext);
+  const {currentAccount, transactions} = useContext(TransactionContext);
   return (
-    <div className="flex w-full justify-center items-center 2xl:px-20 gradient-bg-transactions">
-      <div className="flex flex-col md:p-12 py-12 px-4">
+    <div className="flex w-full justify-center items-center 3x2:px-15 gradient-bg-transactions">
+      <div className="flex flex-col md:p-15 py-12 px-8">
         {currentAccount ? (
           <h3 className="text-white text-3xl text-center my-2">
             Latest Transactions
@@ -61,8 +61,8 @@ const Transactions = () => {
           </h3>
         )}
   
-        <div className="flex flex-wrap justify-center items-center mt-5">
-          {dummyData.reverse().map((transaction, i) => (
+        <div className="flex flex-wrap justify-center items-center mt-6">
+          {transactions.reverse().map((transaction, i) => (
             <TransactionsCard key={i} {...transaction} />
           ))}
         </div>
